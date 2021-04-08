@@ -26,7 +26,9 @@ from tqdm import tqdm
 sns.set()
 tf.compat.v1.random.set_random_seed(1234)
 
-!wget --no-check-certificate https://raw.githubusercontent.com/mehtaishaan0626/StockPrediction/main/datasets/GOOG-year.csv
+from google.colab import files
+src = list(files.upload().values())[0]
+open('GOOG-year.csv','wb').write(src)
 df = pd.read_csv('./GOOG-year.csv')
 df.head()
 
